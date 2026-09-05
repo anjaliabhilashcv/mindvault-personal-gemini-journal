@@ -1,0 +1,6 @@
+{
+  "name": "MindVault – Personal Gemini Journal",
+  "description": "An authenticated, AI-powered private journaling and reflection platform featuring secure Gemini multi-turn conversations and an original Personal Reflection Dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
