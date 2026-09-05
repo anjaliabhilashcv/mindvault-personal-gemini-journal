@@ -6,13 +6,13 @@
 
 ## 1. Project Overview
 
-**MindVault** is an enterprise-grade personal journaling sanctuary built on Google Cloud. It combines the privacy of encrypted personal journaling with the analytical depth of Google Gemini models.
+**MindVault** is a production-ready personal journaling platform built on Google Cloud. It combines the privacy of authenticated, UID-isolated personal journaling with the analytical depth of Google Gemini models.
 
 In MindVault:
 - **Authentication**: Google Sign-In powered by Firebase Authentication.
 - **Data Isolation**: Persistent storage in Cloud Firestore where each user's data is strictly partitioned by their authenticated Firebase UID (`users/{uid}/*`).
 - **AI Intelligence**: Genuine multi-turn conversations and journal analysis powered by the Gemini API via a secure Express server-side proxy—ensuring **zero API keys or secrets are ever exposed to the client bundle**.
-- **Original Phase 3 Feature**: The **Personal Reflection Dashboard**, an analytics engine that synthesizes recurring themes, longitudinal growth trends, and weekly AI reflections computed exclusively from the authenticated user's private journal entries.
+- **Original Feature**: The **Personal Reflection Dashboard**, an analytics engine that synthesizes recurring themes, longitudinal growth trends, and weekly AI reflections computed exclusively from the authenticated user's private journal entries.
 
 ---
 
@@ -31,7 +31,7 @@ In MindVault:
   - Interactive dialogue with a thoughtful journaling and brainstorming companion.
   - Persistent conversation history in Firestore.
   - **"Save conversation as journal entry"**: Converts an active brainstorming session into a structured journal entry with one click.
-- **Personal Reflection Dashboard (Original Phase 3 Feature)**:
+- **Personal Reflection Dashboard (Original Feature)**:
   - **Recurring Themes**: Visual percentage bars and entry counts across common life categories.
   - **Reflection Trends**: 30-day activity and emotional energy timeline chart.
   - **Recent Patterns**: Habit and cognitive observations synthesized by Gemini.
@@ -227,8 +227,8 @@ Documented in `.env.example`:
 ### Setup & Run
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/mindvault.git
-cd mindvault
+git clone https://github.com/anjaliabhilashcv/mindvault-personal-gemini-journal.git
+cd mindvault-personal-gemini-journal
 
 # 2. Install dependencies
 npm install
@@ -263,7 +263,7 @@ Visit `http://localhost:3000` to interact with MindVault.
 
 ## 13. Cloud Run Deployment Instructions
 
-Deploy MindVault directly to Google Cloud Run with the challenge-required label:
+MindVault is deployed to Google Cloud Run through Google AI Studio. The deployed Cloud Run service uses the challenge-required label:
 
 ```bash
 # 1. Set your Google Cloud project
@@ -279,7 +279,7 @@ gcloud services enable run.googleapis.com \
 gcloud run deploy mindvault \
     --source . \
     --platform managed \
-    --region us-central1 \
+    --region asia-southeast1 \
     --allow-unauthenticated \
     --port 3000 \
     --set-secrets="GEMINI_API_KEY=GEMINI_API_KEY:latest" \
@@ -354,7 +354,7 @@ mindvault/
 
 ---
 
-## 16. Original Phase 3 Feature: Personal Reflection Dashboard
+## 16. Original Feature: Personal Reflection Dashboard
 
 The **Personal Reflection Dashboard** is MindVault's standout innovation for the Ideathon. While standard journaling applications offer basic text storage, MindVault analyzes longitudinal personal growth:
 
